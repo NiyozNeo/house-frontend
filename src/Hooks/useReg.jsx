@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
-
+import { Context } from "../Context/AuthContext";
 function useCourse(params) {
   const [reg, setReg] = useState([]);
-
+  const { token, setToken } = useContext(Context);
   useEffect(() => {
     if (reg) {
       fetch(`http://localhost:4000/reg`, {
@@ -17,7 +17,7 @@ function useCourse(params) {
         .then((data) => {
           if (data.token) {
             localStorage.setItem("token", data.token);
-            <Redirect to="/" />
+            setToken(data.token)
           }
         })
         .catch((err) => console.log(err));
