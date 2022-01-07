@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 const Public = ({ path, component }) => {
   const [token] = useAuth();
-  console.log(token);
   if(token) {
     return <Redirect to="/" />
   }

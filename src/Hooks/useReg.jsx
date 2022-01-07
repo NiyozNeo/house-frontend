@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function useCourse(params) {
   const [reg, setReg] = useState([]);
@@ -16,6 +17,7 @@ function useCourse(params) {
         .then((data) => {
           if (data.token) {
             localStorage.setItem("token", data.token);
+            <Redirect to="/" />
           }
         })
         .catch((err) => console.log(err));
