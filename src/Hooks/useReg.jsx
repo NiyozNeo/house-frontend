@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import { Context } from "../Context/AuthContext";
 function useCourse(params) {
   const [reg, setReg] = useState([]);
   const { token, setToken } = useContext(Context);
   useEffect(() => {
     if (reg) {
-      fetch(`http://localhost:4000/reg`, {
+      fetch(`https://home-server-neo.herokuapp.com/reg`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

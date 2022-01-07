@@ -11,7 +11,7 @@ function Home() {
   const [bankData , setBankData] = useState()
   const [not , setNot] = useState()
   useEffect(() => {
-    fetch("http://localhost:4000/developer")
+    fetch("https://home-server-neo.herokuapp.com/developer")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -26,7 +26,7 @@ function Home() {
     sethouseData(null)
     setBanks([])
     setBankData(null)
-    fetch(`http://localhost:4000/complex`, {
+    fetch(`https://home-server-neo.herokuapp.com/complex`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Home() {
     const devId = document.querySelector(".comp").value;
     const devim = comp.find((datam) => datam.complex_id == devId);
     setcompdata(devim);
-    fetch(`http://localhost:4000/house`, {
+    fetch(`https://home-server-neo.herokuapp.com/house`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function Home() {
     const devId = document.querySelector(".uy").value;
     const devim = house.find((datam) => datam.house_id == devId);
     sethouseData(devim);
-    fetch(`http://localhost:4000/banks`, {
+    fetch(`https://home-server-neo.herokuapp.com/banks`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -8,7 +8,7 @@ const Provider = ({ children }) => {
   useEffect(() => {
     console.log(token);
     if (token) {
-      fetch(`http://localhost:4000/check`, {
+      fetch(`https://home-server-neo.herokuapp.com/check`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
