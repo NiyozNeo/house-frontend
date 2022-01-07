@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useReg from "../../Hooks/useReg";
 
 function Home() {
-  const [setReg] = useReg();
+  const [setReg] = useReg("post");
 
   const handleSubmit = (e) => {
     

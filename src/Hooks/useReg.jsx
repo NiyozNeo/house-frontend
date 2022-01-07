@@ -13,7 +13,11 @@ function useCourse(params) {
         body: JSON.stringify(reg),
       })
         .then((res) => res.json())
-        .then((data) => localStorage.setItem("token", data.token))
+        .then((data) => {
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+          }
+        })
         .catch((err) => console.log(err));
     }
   }, [reg]);
